@@ -75,9 +75,3 @@ class OrderApiView(generics.ListAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     
-
-# class ProductFilter(filters.FilterSet):
-#     class Meta:
-#         model = Product
-#         fields = ('category_id', 'subcategory_id')
-
