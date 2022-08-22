@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #local
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
     'rest_framework',
     'django_filters',
     'frontend',
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
 ]
 
-MIDDLEWARE += ['whitenoise.middleware.WhiteNoseMiddleware']
+# MIDDLEWARE += ['whitenoise.middleware.WhiteNoseMiddleware']
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_FILTER_BACKENDS':
@@ -149,7 +149,7 @@ MEDIA_URL = '/media/'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
