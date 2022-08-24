@@ -6,7 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 #from ..catalog.models import Order
 from . import model_filters
-from catalog.models import Category, Subcategory, Product, Order, OrderItem
+from catalog.models import Category, Product, Order, OrderItem
 from .serializers import CategorySerializer
 # from .serializers import SubcategorySerializer
 from .serializers import ProductSerializer
