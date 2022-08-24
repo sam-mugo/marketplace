@@ -19,22 +19,6 @@ class Category(models.Model):
         return self.name
 
 
-# class Subcategory(models.Model):
-#     """SubCategory attributes"""
-
-#     class Meta:
-#         verbose_name = 'Subcategory'
-#         verbose_name_plural = "Subcategories"
-
-#     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-#     name = models.CharField(max_length=50)
-#     description = models.TextField(max_length=1000)
-#     image_url = models.CharField(max_length=150)
-
-#     def __str__(self):
-#         return self.name
-
-
 class Product(models.Model):
     """Product attributes"""
 
