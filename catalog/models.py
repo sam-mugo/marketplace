@@ -19,27 +19,27 @@ class Category(models.Model):
         return self.name
 
 
-class Subcategory(models.Model):
-    """SubCategory attributes"""
+# class Subcategory(models.Model):
+#     """SubCategory attributes"""
 
-    class Meta:
-        verbose_name = 'Subcategory'
-        verbose_name_plural = "Subcategories"
+#     class Meta:
+#         verbose_name = 'Subcategory'
+#         verbose_name_plural = "Subcategories"
 
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    description = models.TextField(max_length=1000)
-    image_url = models.CharField(max_length=150)
+#     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=50)
+#     description = models.TextField(max_length=1000)
+#     image_url = models.CharField(max_length=150)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Product(models.Model):
     """Product attributes"""
 
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    subcategory_id = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
+    # subcategory_id = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     price = models.FloatField(max_length=100000)

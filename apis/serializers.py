@@ -9,10 +9,10 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ('id', 'name', 'description', 'image_url')
 
-class SubcategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subcategory
-        fields = ('id', 'name', 'description', 'image_url', 'category_id')
+# class SubcategorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Subcategory
+#         fields = ('id', 'name', 'description', 'image_url', 'category_id')
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
