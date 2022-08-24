@@ -1,6 +1,6 @@
 from dataclasses import fields
 from rest_framework import serializers
-from catalog.models import Category,  Subcategory, Product, Order, OrderItem
+from catalog.models import Category, Product, Order, OrderItem
 
 
 
