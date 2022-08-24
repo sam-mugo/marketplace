@@ -8,7 +8,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from . import model_filters
 from catalog.models import Category, Subcategory, Product, Order, OrderItem
 from .serializers import CategorySerializer
-from .serializers import SubcategorySerializer
+# from .serializers import SubcategorySerializer
 from .serializers import ProductSerializer
 from .serializers import OrderSerializer
 
