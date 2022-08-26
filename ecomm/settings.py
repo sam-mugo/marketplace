@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
     'django_filters',
     'frontend',
     'catalog',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +77,14 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 ROOT_URLCONF = 'ecomm.urls'
+
+cloudinary.config( 
+  cloud_name = "mmugzo", 
+  api_key = "466931574817527", 
+  api_secret = "y1pDxhlbxwsfG0mdUpkL1wVOJ8k" 
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 TEMPLATES = [
     {
