@@ -15,7 +15,7 @@ class Category(models.Model):
         
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
-    image_url = CloudinaryField('image')
+    
 
     def __str__(self):
         return self.name
@@ -29,7 +29,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     price = models.FloatField(max_length=100000)
-    image_url = models.ImageField(upload_to='images/', null=True, max_length=255)
+    image_url = image_url = CloudinaryField('image')
 
     def __str__(self):
         return self.name
