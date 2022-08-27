@@ -1,4 +1,3 @@
-from unicodedata import category
 from rest_framework import generics, status, filters
 # from rest_framework import filters as fl
 from rest_framework.response import Response

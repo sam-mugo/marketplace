@@ -1,4 +1,3 @@
-from dataclasses import fields
 from rest_framework import serializers
 from catalog.models import Category, Product, Order, OrderItem
 
@@ -7,7 +6,7 @@ from catalog.models import Category, Product, Order, OrderItem
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('id', 'name', 'description', 'image_url')
+        fields = ('id', 'name', 'description')
 
 # class SubcategorySerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -17,7 +16,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'name', 'description', 'price', 'image_url', 'category_id')
+        fields = ('category_id', 'id', 'name', 'description', 'price', 'image_url')
 
 class OrderItemsSerialier(serializers.ModelSerializer):
     class Meta:
