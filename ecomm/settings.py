@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #local
     # 'whitenoise.runserver_nostatic',
     'rest_framework',
+    'corsheaders',
     'django_filters',
     'frontend',
     'catalog',
@@ -71,6 +72,7 @@ MIDDLEWARE = [
 #     ('django_filters.rest_framework.DjangoFiltersBackend',),
 # }
 
+# CORS_ORIGIN_ALLOW_ALL = TrueC= True
 CORS_ORIGIN_WHITELIST = (
 "http://localhost:3000",
 "http://localhost:8000",
