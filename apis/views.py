@@ -61,7 +61,11 @@ class ProductApiView(generics.ListAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+class ProductById(APIView):
+    def retrieve_byid(self, request, query):
+        queryset = Product.objects.filter(id=query)
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 class ProductByCategory(APIView):
     
