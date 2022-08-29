@@ -1,5 +1,5 @@
 from rest_framework import generics, status, filters
-# from rest_framework import filters as fl
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -10,6 +10,7 @@ from .serializers import CategorySerializer
 # from .serializers import SubcategorySerializer
 from .serializers import ProductSerializer
 from .serializers import OrderSerializer
+from apis import serializers
 
 
 class CategoryApiView(generics.ListAPIView):
@@ -59,6 +60,15 @@ class ProductApiView(generics.ListAPIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class ProductByCategory(APIView):
+    
+    def get(self, request, query):
+        queryset = Product.objects.filter(category_id=query)
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 
