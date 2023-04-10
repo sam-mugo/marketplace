@@ -22,7 +22,7 @@ git push -uf origin main
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://devops.ekenya.co.ke/Mugo/farmers_market/-/settings/integrations)
+- [ ] [Set up project integrations]
 
 ## Collaborate with your team
 
