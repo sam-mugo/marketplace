@@ -1,11 +1,23 @@
 from django.contrib import admin
-from . import models
+from .models import Product, Category, ProductReview
 # Register your models here.
 
-admin.site.register(models.Category)
-# admin.site.register(models.Subcategory)
-admin.site.register(models.Product)
-admin.site.register(models.ProductReview)
-admin.site.register(models.OrderItem)
-admin.site.register(models.Order)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['id' ,'name', 'price']
+
+
+@admin.register(ProductReview)
+class ProductReviewAdmin(admin.ModelAdmin):
+    list_display = ['title', 'rating']
+
+
+
+
 

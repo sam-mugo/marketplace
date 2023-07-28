@@ -1,2 +1,3 @@
 *.sqlite3
 *.yml
+*__pycache__

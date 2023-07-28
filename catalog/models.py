@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from tabnanny import verbose
+import uuid
 from django.db import models
 from cloudinary.models import CloudinaryField
 
@@ -28,11 +29,12 @@ class Product(models.Model):
     # subcategory_id = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
-    price = models.FloatField(max_length=100000)
+    price = models.IntegerField()
+    stock = models.IntegerField()
     image_url = CloudinaryField('image')
 
     def __str__(self):
-        return self.name
+        return f"{self.name}___ @{self.price}____________{self.category_id.name}"
 
 
 class ProductReview(models.Model):
@@ -51,34 +53,4 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class OrderItem(models.Model):
-    ordered = models.BooleanField(default=False)
-    item = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)
-
-    def __str__(self):
-        return f"{self.quantity} of {self.item.name}"
-
-    def get_total_item_price(self):
-        return self.quantity * self.item.price
-
-
-class Order(models.Model):
-    items = models.ManyToManyField(OrderItem)
-    created_at = models.DateTimeField(auto_now_add=True)
-    #order_date = models.DateTimeField()
-    ordered = models.BooleanField(default=False)
-
-
-    def get_total(self):
-        total = 0
-        for order_item in self.items.all():
-            total += order_item.get_final_price()
-        return total
-
-
-
-
 
